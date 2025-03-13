@@ -60,4 +60,4 @@ The CI pipeline will:
 3. Install dependencies
 4. Run the test suite
 
-This ensures that any code changes are validated before being merged into the main branch. "# github-actions-task" 
+This ensures that any code changes are validated before being merged into the main branch.
