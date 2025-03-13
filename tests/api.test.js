@@ -3,7 +3,7 @@ const { app, server } = require('../src/index');
 
 describe('API Endpoints', () => {
   afterAll(done => {
-    // Close the server after all tests
+    // Close the server after all test
     server.close(done);
   });
 
