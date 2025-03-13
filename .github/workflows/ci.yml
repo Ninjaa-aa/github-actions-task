@@ -1,13 +1,14 @@
-name: Node.js Express API CI
+name: Node.js CI
 
 on:
   push:
-    branches: [ main, develop ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ main ]
 
 jobs:
   test:
+    name: Test
     runs-on: ubuntu-latest
 
     strategy:
@@ -16,9 +17,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-      name: Checkout code
+      name: Checkout repository
       
-    - name: Setup Node.js ${{ matrix.node-version }}
+    - name: Set up Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
@@ -28,4 +29,4 @@ jobs:
       run: npm ci
       
     - name: Run tests
-      run: npm test
+      run: npm test 

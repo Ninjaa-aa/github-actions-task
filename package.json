@@ -1,12 +1,12 @@
 {
-  "name": "express-api-cicd",
+  "name": "express-hello-world-api",
   "version": "1.0.0",
-  "description": "Node.js Express API with GitHub Actions CI/CD",
+  "description": "A simple Express API that returns Hello, World!",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "jest"
+    "test": "jest --detectOpenHandles"
   },
   "dependencies": {
     "express": "^4.18.2"
@@ -16,4 +16,4 @@
     "nodemon": "^2.0.22",
     "supertest": "^6.3.3"
   }
-}
+} 

@@ -1,63 +1,67 @@
-# Express API with GitHub Actions CI/CD
+# Express Hello World API
 
-A simple Node.js Express API with automated CI/CD using GitHub Actions.
-
-## Features
-
-- Express API with a "Hello, World!" endpoint
-- Jest testing framework with Supertest for API testing
-- GitHub Actions CI/CD pipeline
-- Automatic testing on multiple Node.js versions (16.x and 18.x)
+A simple Express.js API that returns "Hello, World!" with GitHub Actions CI/CD integration.
 
 ## Project Structure
 
 ```
 .
 ├── .github/
-│   └── workflows/
-│       └── ci.yml        # GitHub Actions workflow configuration
+│   └── workflows/      # GitHub Actions workflow files
+│       └── ci.yml      # CI configuration for running tests
 ├── src/
-│   └── index.js          # Main Express application
+│   ├── index.js        # Server setup and entry point
+│   └── routes/
+│       └── index.js    # API route definitions
 ├── tests/
-│   └── api.test.js       # API tests
-├── jest.config.js        # Jest configuration
-├── package.json          # Project dependencies and scripts
-└── README.md             # Project documentation
+│   └── api.test.js     # API endpoint tests
+├── package.json        # Project dependencies and scripts
+└── README.md           # Project documentation
 ```
 
-## Setup
+## Prerequisites
 
-1. Clone the repository
+- Node.js (16.x or 18.x)
+- npm
+
+## Installation
+
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   cd express-hello-world-api
+   ```
+
 2. Install dependencies:
    ```
    npm install
    ```
-3. Run the API locally:
-   ```
-   npm start
-   ```
-4. Run in development mode with auto-reload:
-   ```
-   npm run dev
-   ```
+
+## Running the Application
+
+- Development mode with auto-reload:
+  ```
+  npm run dev
+  ```
+
+- Production mode:
+  ```
+  npm start
+  ```
 
 ## Testing
 
-Run tests with:
+Run the tests:
 ```
 npm test
 ```
 
 ## CI/CD
 
-The project is configured with GitHub Actions to automatically run tests when:
-- Code is pushed to the main or develop branch
-- A pull request is created targeting the main or develop branch
+This project uses GitHub Actions for Continuous Integration. The workflow automatically:
 
-The CI pipeline will:
-1. Check out the repository code
-2. Set up Node.js environment (testing on both 16.x and 18.x)
-3. Install dependencies
-4. Run the test suite
+1. Runs on every push to main branch and on pull requests
+2. Tests the application with Node.js versions 16.x and 18.x
+3. Checks out the code, installs dependencies, and runs tests
 
-This ensures that any code changes are validated before being merged into the main branch.
+The CI configuration can be found in `.github/workflows/ci.yml`. 
